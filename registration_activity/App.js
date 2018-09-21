@@ -59,7 +59,7 @@ export default class StartPage extends Component {
             </View>
             <View style={[styles.box, styles.box2]}>
               <Button
-                              style={styles.button}
+                color = "white"
                 onPress={() => {
                     Alert.alert(Username + ' tapped the button!');
                 }}
