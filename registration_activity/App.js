@@ -7,7 +7,7 @@ import {
   Text,
   Button,
   Alert,
-  Header
+  ImageBackground
 } from 'react-native';
 
 
@@ -23,32 +23,36 @@ var Password = "";
 export default class StartPage extends Component {
   render() {
     return (
+        <ImageBackground source={require('./images/nature.jpg')} style={styles.backgroundImage} >
         <View style={styles.container}>
+
             <View style={styles.header}>
               <Text style={{fontSize: 37, marginTop: 25, fontFamily: 'Savoye LET'}}>
                 Registration Application
               </Text>
             </View>
             <View style={[styles.box, styles.box1]}>
-              <Text style={{fontSize: 19}}>
+              <Text style={{fontSize: 19, color:'white'}}>
                 Enter your Name :
               </Text>
               <TextInput
                  clearButtonMode="always"
                  style={styles.inputTextStyle}
                  placeholder="Type Name here!"
+                 placeholderTextColor="#cfbaba"
                  onChangeText={(text) => this.setState({text})}
                  onChangeText={(text) => Username = text}
               />
             </View>
             <View style={[styles.box, styles.box1]}>
-              <Text style={{fontSize: 19}}>
+              <Text style={{fontSize: 19, color:'white'}}>
                 Enter your Password :
               </Text>
               <TextInput
                 clearButtonMode="always"
                 style={styles.inputTextStyle}
                 placeholder="Type Password here!"
+                placeholderTextColor="#cfbaba"
                 onChangeText={(text) => this.setState({text})}
                 onChangeText={(text) => Password = text}
                />
@@ -62,6 +66,7 @@ export default class StartPage extends Component {
                 title='SIGN IN' />
             </View>
         </View>
+        </ImageBackground>
     );
   }
 }
@@ -70,7 +75,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+  },
+  backgroundImage: {
+  flex: 1
   },
   header: {
     backgroundColor : 'red',
@@ -78,42 +86,32 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems:'center'
   },
-  button: {
-    borderStyle: 'solid',
-    borderColor : 'blue',
-    borderWidth: 2
-  },
   inputTextStyle: {
-    height: 40,
+    color: 'white',
+    height: 30,
     fontSize: 20,
     marginTop: 10,
-    backgroundColor: 'white',
     width: 250,
     borderRadius: 5,
     textAlign: 'center',
-    borderStyle: 'dashed',
-    borderColor : 'grey',
-    borderWidth: 1
+    backgroundColor: 'white'
   },
   box: {
     height: box_height,
-    marginHorizontal: 35
+    marginHorizontal: 35,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   box1: {
-    backgroundColor: '#fff',
     borderRadius: 20,
-    alignItems: 'center',
     flexDirection: 'column',
     padding: 10,
     borderStyle: 'solid',
-    borderColor : 'blue',
+    borderColor : 'white',
     borderWidth: 1
   },
   box2: {
-    backgroundColor: 'white',
-    height: 35,
-    marginBottom: 10,
-    alignItems: 'center',
-    justifyContent:'center'
+    justifyContent: 'flex-start',
+    height: 100
   }
 });
