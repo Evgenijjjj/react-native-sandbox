@@ -87,7 +87,6 @@ const styles = StyleSheet.create({
     alignItems:'center'
   },
   inputTextStyle: {
-    color: 'white',
     height: 30,
     fontSize: 20,
     marginTop: 10,
